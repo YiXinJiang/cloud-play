@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../config-server/config-server.iml" filepath="$PROJECT_DIR$/../config-server/config-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../eureka-server/eureka.iml" filepath="$PROJECT_DIR$/../eureka-server/eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../msg-consumer/msg-consumer.iml" filepath="$PROJECT_DIR$/../msg-consumer/msg-consumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../msg-producer/msg-producer.iml" filepath="$PROJECT_DIR$/../msg-producer/msg-producer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/parent-pom.iml" filepath="$PROJECT_DIR$/parent-pom.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../serverclint/serverclint.iml" filepath="$PROJECT_DIR$/../serverclint/serverclint.iml" />
+    </modules>
+  </component>
+</project>

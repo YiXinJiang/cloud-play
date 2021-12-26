@@ -1,0 +1,38 @@
+server:
+  port: 9000
+  servlet:
+    context-path: /configServer
+
+spring:
+  application:
+    name: configServer
+  profiles:
+    active: native
+  cloud:
+    config:
+      discovery:
+        service-id: configServer
+        enabled: true
+      server:
+#        git:
+#          uri: https://github.com/YiXinJiang/CloudConfig/
+#          search-paths: config
+#          username: 783696826@qq.com
+#          password: xin822501
+        native:
+          search-locations: file:D:/properties/
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://yixin:xin123456@192.168.0.112:8000/eurekaServer/eureka/
+  instance:
+    prefer-ip-address: true
+    ip-address: 192.168.0.112
+    instance-id: ${eureka.instance.ip-address}:${server.port}
+    metadata-map:
+      configPath: ${server.servlet.context-path:}
+
+logging:
+  level:
+    com.netflix: warn

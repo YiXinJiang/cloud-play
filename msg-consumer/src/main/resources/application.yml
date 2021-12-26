@@ -1,0 +1,27 @@
+server:
+  port: 10003
+  servlet:
+    context-path: /msgConsumer
+
+spring:
+  application:
+    name: msg-consumer
+
+feign:
+  hystrix:
+    enabled: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://yixin:xin123456@192.168.0.112:8000/eurekaServer/eureka/
+  instance:
+    prefer-ip-address: true
+    ip-address: 192.168.0.112
+    instance-id: ${eureka.instance.ip-address}:${server.port}
+    metadata-map:
+      configPath: ${server.servlet.context-path:}
+
+logging:
+  level:
+    com.netflix: warn

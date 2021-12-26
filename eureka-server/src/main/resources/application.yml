@@ -1,0 +1,28 @@
+server:
+  port: 8000
+  servlet:
+    context-path: /eurekaServer
+
+spring:
+  application:
+    name: eurekaServer
+  security:
+    user:
+      name: yixin
+      password: xin123456
+
+eureka:
+  server:
+    enable-self-preservation: false
+    eviction-interval-timer-in-ms: 2000
+  instance:
+    hostname: 192.168.0.112
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://yixin:xin123456@${eureka.instance.hostname}:${server.port}/eurekaServer/eureka/
+
+logging:
+  level:
+    com.netflix: warn

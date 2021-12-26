@@ -1,0 +1,23 @@
+spring:
+  cloud:
+    config:
+      name: hean-properties
+      profile: dev
+      discovery:
+        enabled: true
+        service-id: configServer
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://yixin:xin123456@192.168.0.112:8000/eurekaServer/eureka/
+  instance:
+    prefer-ip-address: true
+    ip-address: 192.168.0.112
+    instance-id: ${eureka.instance.ip-address}:${server.port}
+    metadata-map:
+      configPath: ${server.servlet.context-path:}
+
+logging:
+  level:
+    com.netflix: warn
